@@ -1,14 +1,14 @@
 $(function() {
 	$('.use__slider-list').on('init', function(event, slick) {
-	  $('.count').text(slick.currentSlide + 1);
-	  $('.nocount').text(slick.slideCount);
+	$('.count').text(slick.currentSlide + 1);
+	$('.nocount').text(slick.slideCount);
 	})
 	.slick({
 	})
 	.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-	  $('.count').text(nextSlide + 1);
+		$('.count').text(nextSlide + 1);
 	});
-  });
+});
 
 
 $('.option__list').slick({
@@ -22,3 +22,10 @@ $('.option__list').slick({
 	}]
 });
 
+//ハンバーガーの制御
+const ham = document.querySelector('#js-hamburger');
+const nav = document.querySelector('#js-nav');
+ham.addEventListener('click',function(){
+	ham.classList.toggle('active');
+	nav.classList.toggle('active');
+});
